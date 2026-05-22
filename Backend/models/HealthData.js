@@ -1,5 +1,21 @@
 const mongoose = require("mongoose");
 
+const mealSchema = new mongoose.Schema({
+  description: String,
+  calories: Number,
+  protein: Number,
+  carbs: Number,
+  fats: Number,
+  fiber: Number,
+  healthScore: Number,        // 1-10 AI rated
+  suggestion: String,         // AI tip for this meal
+  healthierSwap: String,      // AI suggested healthier alternative
+  loggedAt: {
+    type: Date,
+    default: Date.now
+  }
+});
+
 const healthDataSchema = new mongoose.Schema({
   userId: {
     type: mongoose.Schema.Types.ObjectId,
@@ -11,17 +27,24 @@ const healthDataSchema = new mongoose.Schema({
     required: true
   },
   bloodPressureSystolic: {
-    type: Number   // upper value e.g. 120
+    type: Number
   },
   bloodPressureDiastolic: {
-    type: Number   // lower value e.g. 80
+    type: Number
   },
   glucoseLevel: {
-    type: Number   // mg/dL
+    type: Number
   },
   oxygenLevel: {
-    type: Number   // SpO2 %
+    type: Number
   },
+  stressScore: {
+    type: Number       // 0-100, added for HRV feature
+  },
+  hrv: {
+    type: Number       // ms, added for HRV feature
+  },
+  meals: [mealSchema], // ← meal logs embedded here
   timestamp: {
     type: Date,
     default: Date.now
