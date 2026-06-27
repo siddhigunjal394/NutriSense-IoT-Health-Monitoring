@@ -4,7 +4,7 @@ import { useAuth } from '../context/AuthContext';
 import Sidebar from '../components/Sidebar';
 import Toast from '../components/Toast';
 
-const API = 'http://localhost:5000/api/meals';
+const API = 'https://nutrisense-iot-health-monitoring-5.onrender.com/api/meals';
 
 const DAILY_GOAL = { calories: 2000, protein: 60, carbs: 250, fats: 65 };
 

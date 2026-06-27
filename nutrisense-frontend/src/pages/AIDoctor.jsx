@@ -4,7 +4,7 @@ import { useAuth } from '../context/AuthContext';
 import { getLatestHealth } from '../services/api';
 import Sidebar from '../components/Sidebar';
 
-const API = 'http://localhost:5000/api/ai-doctor';
+const API = 'https://nutrisense-iot-health-monitoring-5.onrender.com/api/meals';
 
 const quickQuestions = [
   'What do my vitals say about my health?',
