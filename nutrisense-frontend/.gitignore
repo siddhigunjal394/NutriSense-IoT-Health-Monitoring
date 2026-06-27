@@ -12,7 +12,7 @@ node_modules/
 dist/
 build/
 .vscode/
-*.log
+*.log+
 
 # Editor directories and files
 .vscode/*

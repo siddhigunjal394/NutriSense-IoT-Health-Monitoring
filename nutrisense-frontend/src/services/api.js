@@ -1,14 +1,14 @@
 import axios from 'axios';
 
 const API = axios.create({
-  baseURL: 'http://localhost:5000/api',
+  baseURL: 'https://nutrisense-iot-health-monitoring-5.onrender.com/api',
   headers: {
     'Content-Type': 'application/json'
   }
 });
 
 // Auto attach token to every request
-API.interceptors.request.use((config) => {
+API.interceptors.request.use((config) => {~
   const token = localStorage.getItem('ns_token');
   if (token) {
     config.headers.Authorization = `Bearer ${token}`;
